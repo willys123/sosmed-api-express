@@ -8,6 +8,7 @@ import { loginUserController } from "../controllers/users/loginUserController";
 import { registerUserController } from "../controllers/users/registerUserController";
 import { verifyToken } from "../middleware/jwtVerifyToken";
 import { getUserTweetController } from "../controllers/tweets/getUserTweetController";
+import { getWhoToFollowController } from "../controllers/users/getWhoToFollowController";
 
 const router = express.Router();
 
@@ -19,5 +20,6 @@ router.get("/tweets", getTweetsController);
 router.delete("/tweets/:id", deleteTweetController);
 router.patch("/tweets/:id", editTweetController);
 router.get("/tweets/:id", getUserTweetController);
+router.get("/users", getWhoToFollowController);
 
 export default router;
