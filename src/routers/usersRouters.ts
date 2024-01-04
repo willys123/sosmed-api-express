@@ -7,6 +7,7 @@ import { keepLoginController } from "../controllers/users/keepLoginController";
 import { loginUserController } from "../controllers/users/loginUserController";
 import { registerUserController } from "../controllers/users/registerUserController";
 import { verifyToken } from "../middleware/jwtVerifyToken";
+import { getUserTweetController } from "../controllers/tweets/getUserTweetController";
 
 const router = express.Router();
 
@@ -17,5 +18,6 @@ router.post("/", createTweetController);
 router.get("/tweets", getTweetsController);
 router.delete("/tweets/:id", deleteTweetController);
 router.patch("/tweets/:id", editTweetController);
+router.get("/tweets/:id", getUserTweetController);
 
 export default router;
